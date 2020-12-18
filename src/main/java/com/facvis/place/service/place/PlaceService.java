@@ -6,13 +6,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 @RequiredArgsConstructor
 @Service
 public class PlaceService {
     private final PlaceApiClient placeApiClient;
 
     @Transactional(readOnly = true)
-    public PlaceResponseDto findByKeyword(String keyword){
-        return placeApiClient.requestPlace(keyword);
+    public PlaceResponseDto findByKeyword(String search){
+        return placeApiClient.requestPlace(search);
     }
 }

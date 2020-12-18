@@ -16,7 +16,7 @@ public class PlaceApiClient {
     private final String CLIENT_ID = "qGC0TfZb3XxmbWyhFi_x";
     private final String CLIENT_SECRET = "xPyTCeZLrd";
     private final String kind_key = "애견동반 ";
-    private final String OpenNaverPlaceUrl_getPlace = "https://openapi.naver.com/v1/search/local.json?query="+kind_key+"{keyword}";
+    private final String OpenNaverPlaceUrl_getPlace = "https://openapi.naver.com/v1/search/local.json?query="+kind_key+"{search}&display=30";
 
     public PlaceResponseDto requestPlace(String keyword){
         final HttpHeaders headers = new HttpHeaders();

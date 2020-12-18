@@ -12,9 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class PlaceApiController {
     private final PlaceService placeService;
 
-
-    @GetMapping("/api/v1/place/{keyword}")
-    public PlaceResponseDto get(@PathVariable String keyword){
-        return placeService.findByKeyword(keyword);
+    @GetMapping("/api/v1/place/{search}")
+    public PlaceResponseDto get(@PathVariable String search){
+        return placeService.findByKeyword(search);
     }
 }
