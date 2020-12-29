@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Controller
 public class indexController {
@@ -21,9 +23,9 @@ public class indexController {
     }
 
     @GetMapping("/place/result/{search}")
-    public String listResult(@PathVariable String search, Model model){
-        PlaceResponseDto dto = placeApiClient.requestPlace(search);
-        model.addAttribute("places",dto.getItems());
+    public String listResult(@PathVariable String search, Model model) throws Exception {
+        List<PlaceResponseDto> dto = placeApiClient.getPlaceJson(search);
+        model.addAttribute("places",dto);
 
         return "place-result";
     }
