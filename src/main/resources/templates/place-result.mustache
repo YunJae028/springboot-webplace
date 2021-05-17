@@ -89,7 +89,8 @@
 
 
     <!-- Right content -->
-    <div class="col-xl-8 col-lg-9 col-md-6" >
+    <div class="col-xl-8 col-lg-9 col-md-6">
+        <div class="row justify-content-center">
         <div class="row">
             <div class="col-lg-12">
                 <div class="count mb-35">
@@ -109,14 +110,13 @@
                                 <!-- <span>Open</span> -->
                             </div>
                             <div class="list-caption">
-                                <span>Open</span>
-                                <h3><a href="listing_details.html"></a></h3>
-                                <p>address</p>
+                                <span><a href={{link}}>Open</a></span>
+                                <h3><a href="listing_details.html">{{title}}</a></h3>
+                                <p>{{address}}</p>
                                 <div class="list-footer">
                                     <ul>
-                                        <li>{{title}}</li>
                                         <li>{{link}}</li>
-                                        <li>{{address}}</li>
+                                        <li>{{telephone}}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -151,6 +151,7 @@
     </div>
     </div>
     </div>
+
     <!-- listing-area Area End -->
 
 </header>

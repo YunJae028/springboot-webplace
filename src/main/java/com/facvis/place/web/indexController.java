@@ -15,7 +15,8 @@ import java.util.List;
 @Controller
 public class indexController {
 
-    private final PlaceApiClient placeApiClient;
+   // private final PlaceApiClient placeApiClient;
+    private final PlaceService placeService;
 
     @GetMapping("/")
     public String index(){
@@ -24,7 +25,8 @@ public class indexController {
 
     @GetMapping("/place/result/{search}")
     public String listResult(@PathVariable String search, Model model) throws Exception {
-        List<PlaceResponseDto> dto = placeApiClient.getPlaceJson(search);
+       // List<PlaceResponseDto> dto = placeApiClient.getPlaceJson(search);
+        List<PlaceResponseDto> dto = placeService.findByKeyword(search);
         model.addAttribute("places",dto);
 
         return "place-result";

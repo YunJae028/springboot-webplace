@@ -18,4 +18,5 @@ public class PlaceService {
     public List<PlaceResponseDto> findByKeyword(String search) throws Exception{
       return placeApiClient.getPlaceJson(search);
     }
+
 }

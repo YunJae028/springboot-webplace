@@ -22,6 +22,7 @@ import java.util.Map;
 //@RequiredArgsConstructor
 @Service
 public class PlaceApiClient {
+    //네이버 지역 검색 api 받기
     public static String requestPlace(String keyword) {
         String kind_key = "애견동반 ";
 
@@ -32,8 +33,6 @@ public class PlaceApiClient {
         String text = null;
         try {
             text = URLEncoder.encode(kind_key + keyword , "UTF-8");
-
-            //text = URLEncoder.encode("애견동반 은평구", "UTF-8");
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException("검색어 인코딩 실패",e);
         }
@@ -108,11 +107,14 @@ public class PlaceApiClient {
 
         Gson gson = new Gson();
 
+        //Gson라이브러리 -> json 받은 데이터를 자동으로 set
+        //JsonList -> List로 변환
         List<PlaceResponseDto> list = gson.fromJson(j_item.toString(), new TypeToken<List<PlaceResponseDto>>(){}.getType());
 
-        for(PlaceResponseDto placeResponseDto : list){
+        /*for(PlaceResponseDto placeResponseDto : list){
            // System.out.println(list);
         }
+         */
         return list;
     }
 }

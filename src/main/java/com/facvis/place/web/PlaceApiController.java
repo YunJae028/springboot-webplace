@@ -14,9 +14,9 @@ import java.util.List;
 public class PlaceApiController {
     private final PlaceService placeService;
 
-
     @GetMapping("/api/v1/place/{search}")
     public List<PlaceResponseDto> get(@PathVariable String search) throws Exception{
         return placeService.findByKeyword(search);
     }
+
 }
